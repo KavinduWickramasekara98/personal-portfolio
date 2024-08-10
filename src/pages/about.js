@@ -2,27 +2,22 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function About() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Check if window is defined (which means we are in the browser)
-    if (typeof window !== "undefined") {
-      const handleMouseMove = (event) => {
-        setMousePosition({ x: event.clientX, y: event.clientY });
-      };
+    const handleMouseMove = (event) => {
+      setMousePosition({ x: event.clientX, y: event.clientY });
+    };
 
-      window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
-      return () => {
-        window.removeEventListener("mousemove", handleMouseMove);
-      };
-    }
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   const calculateTransform = () => {
-    if (typeof window === "undefined") return "translate(0px, 0px)"; // No transform on the server
-
     const { x, y } = mousePosition;
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
@@ -35,7 +30,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>My Personal Website</title>
+        <title>About Me - My Personal Website</title>
       </Head>
 
       <main className={styles.main}>
@@ -43,13 +38,14 @@ export default function Home() {
           className={styles.title}
           style={{ transform: calculateTransform() }}
         >
-          Welcome to My Personal Website
+          About Me
         </h1>
         <p
           className={styles.description}
           style={{ transform: calculateTransform() }}
         >
-          Hi, I'm Kavindu Wickramasekara, a Technology Innovator.
+          I am Kavindu Wickramasekara, a passionate Technology Innovator. Here's
+          my story...
         </p>
       </main>
 

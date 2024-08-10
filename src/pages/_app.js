@@ -1,5 +1,14 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
+import Link from "next/link";
+import NavBar from "./components/NavBar";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <NavBar />
+      <Component {...pageProps} />
+    </>
+  );
 }
+
+export default MyApp;
