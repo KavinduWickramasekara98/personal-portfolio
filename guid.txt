@@ -1,0 +1,12 @@
+
+#last part is specify docker file location
+docker build -t name-of-the-docker-file .
+
+#find images
+docker images
+
+#find containers
+docker ps
+#unused containers
+docker ps -a
+# docker run --name container-name image-name

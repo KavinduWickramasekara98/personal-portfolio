@@ -49,7 +49,7 @@ export default function Home() {
           className={styles.description}
           style={{ transform: calculateTransform() }}
         >
-          Hi, I'm Kavindu Wickramasekara, a Technology Innovator.
+          Hi, I m Kavindu Wickramasekara, a Technology Innovator.
         </p>
       </main>
 
